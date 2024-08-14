@@ -1,0 +1,20 @@
+<form action="/addtask" method="POST">
+    <input type="text" name="newtask" placeholder="New Task" required>
+    <button type="submit">Add Task</button>
+</form>
+
+<ul>
+    <% tasks.forEach(task=> { %>
+        <li>
+
+            <%= task %>
+                <form action="/removetask" method="POST" style="display: inline;">
+
+
+                    <input type="hidden" name="task" value="<%= task %>">
+                    <button class="buttonRemove" type="submit">Remove</button>
+
+                </form>
+        </li>
+        <% }) %>
+</ul>
